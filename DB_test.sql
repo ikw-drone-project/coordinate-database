@@ -14,7 +14,7 @@ CREATE TABLE coordinates (
 
 DROP TABLE IF EXISTS location;
 CREATE TABLE location (
-    IS_GPS BOOL PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     latitude DECIMAL(9, 6),
     longitude DECIMAL(9, 6)
 )comment ='current aircraft location';
