@@ -1,6 +1,13 @@
 import pymysql
 import random
 
+sql = {
+    'host': 'localhost',
+    'user': 'military',
+    'password': '1234',
+    'db': 'military'
+}
+
 def generate_random_coordinates():
     # 무작위 위도 및 경도 생성
     latitude = round(random.uniform(-90, 90), 6)
@@ -14,8 +21,8 @@ def is_coordinate_duplicate(cursor, latitude, longitude):
     result = cursor.fetchone()[0]
     return result > 0
 
-def conn():
-    return pymysql.connect(host='localhost', user='secure', password='1234', db='secure')
+def conn(): # DB 연결
+    return pymysql.connect(host=sql['host'], user=sql['user'], password=sql['password'], db=sql['db'])
 
 def save_coordinates_to_mysql(lat,lng):
     DB = conn()

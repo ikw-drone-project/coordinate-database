@@ -1,5 +1,9 @@
-# create database db_test;
-use db_test;
+# CREATE user "military"@"localhost" IDENTIFIED BY "1234";
+# GRANT ALL PRIVILEGES ON military.* TO "military"@"localhost";
+
+# CREATE DATABASE IF NOT EXISTS military;
+
+use military;
 
 drop table if exists coordinates;
 CREATE TABLE coordinates (
